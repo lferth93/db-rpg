@@ -1,0 +1,18 @@
+services:
+  web:
+    image: php:7.2-apache
+    ports:
+      - "8080:80"
+    volumes:
+      - ./html:/var/www/html 
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: tianming
+      MYSQL_DATABASE: rpg
+      MYSQL_USER: yun
+      MYSQL_PASSWORD: tianming
+    ports:
+      - "3305:3306"
+    volumes:  
+      - ./db:/var/lib/mysql
